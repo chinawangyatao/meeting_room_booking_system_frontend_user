@@ -3,6 +3,7 @@ import { LoginProps } from './LoginRegister';
 import { Button, Col, Form, Input, Row } from 'antd';
 
 const Register = memo((props: LoginProps) => {
+  const { submit } = props;
   return (
     <>
       <Form>
@@ -28,6 +29,20 @@ const Register = memo((props: LoginProps) => {
             </Col>
             <Col>
               <Button type={'primary'}>获取验证码</Button>
+            </Col>
+          </Row>
+        </Form.Item>
+        <Form.Item>
+          <Row justify={'space-between'} gutter={20}>
+            <Col span={12}>
+              <Button block type={'primary'}>
+                提交
+              </Button>
+            </Col>
+            <Col span={12}>
+              <Button block type={'dashed'} onClick={() => submit}>
+                返回登录
+              </Button>
             </Col>
           </Row>
         </Form.Item>

@@ -6,16 +6,24 @@ import styled from 'styled-components';
 import Register from './Register';
 
 const Index = memo(() => {
-  const [isRegister, setIsRegister] = useState(false);
-  const submit = (val: submitValue) => {
+  const [isRegister, setIsRegister] = useState(true);
+  const submit = (val?: submitValue) => {
     console.log(val);
+  };
+  const handleRegister = (val: any) => {
+    console.log(val);
+    console.log(123);
   };
   return (
     <LoginWrapper>
       <Row justify={'center'} align={'middle'}>
         <Col span={8} md={{ span: 14 }} sm={{ span: 20 }} xs={{ span: 24 }}>
           <Card bordered title={'会议室预订系统'}>
-            {isRegister ? <Login submit={submit} /> : <Register submit={submit} />}
+            {isRegister ? (
+              <Login submit={submit} handleRegister={handleRegister} />
+            ) : (
+              <Register submit={submit} handleRegister={handleRegister} />
+            )}
           </Card>
         </Col>
       </Row>

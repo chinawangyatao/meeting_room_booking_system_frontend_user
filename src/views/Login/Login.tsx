@@ -1,13 +1,14 @@
 import React, { memo } from 'react';
 import { Button, Col, Form, Input, Row } from 'antd';
-import { LoginProps } from './LoginRegister';
+import { LoginProps, submitValue } from './LoginRegister';
 import { Link } from 'react-router-dom';
 
 const Login = memo((props: LoginProps) => {
-  const { submit } = props;
+  const { submit, handleRegister } = props;
+
   return (
     <>
-      <Form onFinish={val => submit(val)}>
+      <Form onFinish={val => submit(val as { username: string })}>
         <Form.Item labelCol={{ span: 4 }} labelAlign={'left'} label={'用户名'} name={'username'}>
           <Input />
         </Form.Item>
@@ -16,8 +17,14 @@ const Login = memo((props: LoginProps) => {
         </Form.Item>
         <Form.Item>
           <Row justify={'space-between'}>
-            <Col>创建账号</Col>
-            <Col>忘记密码</Col>
+            <Col>
+              <Button type={'link'} onClick={handleRegister}>
+                创建账号
+              </Button>
+            </Col>
+            <Col>
+              <Button type={'link'}>忘记密码?</Button>
+            </Col>
           </Row>
         </Form.Item>
         <Form.Item>

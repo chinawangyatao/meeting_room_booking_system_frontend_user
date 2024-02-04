@@ -1,5 +1,6 @@
 export type LoginProps = {
-  submit: (v: submitValue) => void;
+  submit?: (v: submitValue | undefined) => void;
+  handleRegister?: (v) => void;
 };
 
 type submitValue = {
