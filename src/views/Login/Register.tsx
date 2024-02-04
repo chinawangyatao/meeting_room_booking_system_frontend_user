@@ -3,10 +3,10 @@ import { LoginProps } from './LoginRegister';
 import { Button, Col, Form, Input, Row } from 'antd';
 
 const Register = memo((props: LoginProps) => {
-  const { submit } = props;
+  const { submit, handleRegister } = props;
   return (
     <>
-      <Form>
+      <Form onFinish={submit}>
         <Form.Item name={'username'} labelCol={{ span: 4 }} labelAlign={'left'} label={'用户名'}>
           <Input />
         </Form.Item>
@@ -35,12 +35,12 @@ const Register = memo((props: LoginProps) => {
         <Form.Item>
           <Row justify={'space-between'} gutter={20}>
             <Col span={12}>
-              <Button block type={'primary'}>
+              <Button block type={'primary'} htmlType={'submit'}>
                 提交
               </Button>
             </Col>
             <Col span={12}>
-              <Button block type={'dashed'} onClick={() => submit}>
+              <Button block type={'dashed'} onClick={handleRegister}>
                 返回登录
               </Button>
             </Col>

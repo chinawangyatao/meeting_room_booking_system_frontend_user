@@ -3,7 +3,7 @@ export type LoginProps = {
   handleRegister?: (v) => void;
 };
 
-type submitValue = {
+export type submitValue = {
   username: string;
   password: string;
   nickname?: string;

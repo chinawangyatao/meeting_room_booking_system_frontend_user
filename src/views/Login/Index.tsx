@@ -10,9 +10,8 @@ const Index = memo(() => {
   const submit = (val?: submitValue) => {
     console.log(val);
   };
-  const handleRegister = (val: any) => {
-    console.log(val);
-    console.log(123);
+  const handleRegister = ($e: Event) => {
+    setIsRegister(!isRegister);
   };
   return (
     <LoginWrapper>
