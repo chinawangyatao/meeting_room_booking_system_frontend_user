@@ -32,4 +32,5 @@
 ## 更多
 
 ### 技术栈
-1.antd、react18、redux-tookTik、react-router6
+1.antd、react18、react-router6
+2.因为redux 库过于大和臃肿所以采用新的状态管理方案：ZUSTAND

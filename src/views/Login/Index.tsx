@@ -13,7 +13,7 @@ const Index = memo(() => {
   return (
     <LoginWrapper>
       <Row justify={'center'} align={'middle'}>
-        <Col span={8}>
+        <Col span={8} md={{ span: 14 }} sm={{ span: 20 }} xs={{ span: 24 }}>
           <Card bordered title={'会议室预订系统'}>
             {isRegister ? <Login submit={submit} /> : <Register submit={submit} />}
           </Card>
