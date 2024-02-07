@@ -1,7 +1,9 @@
 import React, { memo } from 'react';
-import
+import { Layout } from 'antd';
 
-const Layout = memo(() => {
+const { Sider, Footer, Content, Header } = Layout;
+
+const Index = memo(() => {
   return (
     <>
       <Layout>
